@@ -93,7 +93,12 @@ app.post('/bfhl', upload.single('file'), (req, res) => {
   console.log('Sending response:', response);
   res.json(response);
 });
-
+app.get("/bfhl", (req, res) => {
+  res.json({
+    is_success: true,
+    operation_code: 1,
+  });
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error:', err.stack);
